@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Global Strategic News</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>🌐 Global Strategic News</h1>
+            <div class="header-controls">
+                <input type="text" id="search" placeholder="Search headlines...">
+                <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+            </div>
+        </div>
+
+        <!-- Category filter bar -->
+        <nav class="filter-bar" id="category-filter">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Politics">Politics</button>
+            <button class="filter-btn" data-category="Economics">Economics</button>
+            <button class="filter-btn" data-category="Technology">Technology</button>
+            <button class="filter-btn" data-category="Industry">Industry</button>
+            <button class="filter-btn" data-category="Energy">Energy</button>
+            <button class="filter-btn" data-category="Defense">Defense</button>
+            <button class="filter-btn" data-category="Materials">Materials</button>
+            <button class="filter-btn" data-category="Global Affairs">Global Affairs</button>
+        </nav>
+
+        <!-- Country filter bar -->
+        <nav class="filter-bar" id="country-filter">
+            <button class="filter-btn active" data-country="all">Global</button>
+            <button class="filter-btn" data-country="India">India</button>
+            <button class="filter-btn" data-country="China">China</button>
+            <button class="filter-btn" data-country="Pakistan">Pakistan</button>
+            <button class="filter-btn" data-country="Bangladesh">Bangladesh</button>
+            <button class="filter-btn" data-country="Saudi Arabia">Saudi Arabia</button>
+            <button class="filter-btn" data-country="UAE">UAE</button>
+            <button class="filter-btn" data-country="United States">United States</button>
+            <button class="filter-btn" data-country="Europe">Europe</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard-grid">
+            <!-- Left column: insights + feed manager -->
+            <aside class="insights">
+                <section class="insight-card" id="trending-section">
+                    <h2>📈 Trending Topics</h2>
+                    <div id="trending-list">Loading...</div>
+                </section>
+                <section class="insight-card" id="daily-brief-section">
+                    <h2>📋 Daily Global Brief</h2>
+                    <div id="daily-brief">Loading...</div>
+                </section>
+
+                <!-- Feed Manager – add your own RSS feeds here, no coding needed -->
+                <section class="insight-card" id="feed-manager">
+                    <h2>📡 Feed Manager</h2>
+                    <form id="add-feed-form">
+                        <input type="url" id="feed-url" placeholder="RSS Feed URL" required>
+                        <input type="text" id="feed-name" placeholder="Source Name (e.g., My News)" required>
+                        <select id="feed-category" required>
+                            <option value="">Select Category</option>
+                            <option value="Politics">Politics</option>
+                            <option value="Economics">Economics</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Industry">Industry</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Defense">Defense</option>
+                            <option value="Materials">Materials</option>
+                            <option value="Global Affairs">Global Affairs</option>
+                        </select>
+                        <select id="feed-country" required>
+                            <option value="">Select Country</option>
+                            <option value="Global">Global</option>
+                            <option value="India">India</option>
+                            <option value="China">China</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="UAE">UAE</option>
+                            <option value="United States">United States</option>
+                            <option value="Europe">Europe</option>
+                        </select>
+                        <button type="submit">Add Feed</button>
+                    </form>
+                    <div id="custom-feeds-list">
+                        <!-- Your saved feeds will appear here -->
+                    </div>
+                    <p style="font-size:0.8rem; margin-top:0.5rem;">Feeds are saved in your browser.</p>
+                </section>
+            </aside>
+
+            <!-- Right column: news cards -->
+            <section class="news-feed">
+                <div id="news-grid" class="news-grid">
+                    <p class="loading">Fetching latest intelligence...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
